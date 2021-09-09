@@ -1,0 +1,11 @@
+{
+  "name": "algorithm",
+  "version": "1.0.0",
+  "author": "최종명 <zmzhoi@gmail.com>",
+  "scripts": {
+    "start:baekjoon": "nodemon baekjoon/$TARGET/main.js"
+  },
+  "dependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
