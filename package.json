@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "author": "최종명 <zmzhoi@gmail.com>",
   "scripts": {
-    "start:baekjoon": "nodemon baekjoon/$TARGET/main.js"
+    "start:baekjoon": "nodemon baekjoon/$TARGET/main.js",
+    "create": "node scripts/create.js"
   },
   "dependencies": {
+    "chalk": "^4.1.2",
+    "mkdirp": "^1.0.4",
     "nodemon": "^2.0.12"
   }
 }
