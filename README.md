@@ -1,5 +1,7 @@
 # Algorithm
 
+꾸준하게 ^0^
+
 ### How to create
 
 ```sh
