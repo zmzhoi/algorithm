@@ -1,5 +1,5 @@
 function toNumberArray(number) {
-  return number.split("").map((num) => +num);
+  return number.split('').map((num) => +num);
 }
 
 function solution(number, k) {
@@ -24,7 +24,7 @@ function solution(number, k) {
     }
   }
 
-  return answer.slice(0, realAnswerLength).join("");
+  return answer.slice(0, realAnswerLength).join('');
 }
 
 /**

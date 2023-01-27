@@ -1,12 +1,12 @@
 function calculateDuration(s, e) {
-  const [sh, sm] = s.split(":");
-  const [eh, em] = e.split(":");
+  const [sh, sm] = s.split(':');
+  const [eh, em] = e.split(':');
 
   return (Number(eh) - Number(sh)) * 60 + (Number(em) - Number(sm));
 }
 
 function getMelodyLength(melody) {
-  return melody.length - (melody.split("#").length - 1);
+  return melody.length - (melody.split('#').length - 1);
 }
 
 function isThisSong(playedMelody, melody) {
@@ -19,7 +19,7 @@ function isThisSong(playedMelody, melody) {
     }
 
     const endIndex = index + melody.length;
-    if (playedMelody[endIndex] !== "#") {
+    if (playedMelody[endIndex] !== '#') {
       return true;
     } else {
       fromIndex = endIndex;
@@ -34,14 +34,14 @@ function getPlayedMelody(melody, melodyLength, duration) {
   let remainedCount = duration % melodyLength;
 
   let i = 0;
-  let remainedMelody = "";
-  for (const char of melody.split("")) {
+  let remainedMelody = '';
+  for (const char of melody.split('')) {
     i++;
     remainedMelody += char;
-    if (char !== "#") {
+    if (char !== '#') {
       remainedCount--;
     }
-    if (remainedCount === 0 && melody[i] !== "#") {
+    if (remainedCount === 0 && melody[i] !== '#') {
       break;
     }
   }
@@ -50,11 +50,11 @@ function getPlayedMelody(melody, melodyLength, duration) {
 }
 
 function solution(m, musicinfos) {
-  let answer = "(None)";
+  let answer = '(None)';
   let currentAnswerDuration = -1;
 
   musicinfos.forEach((music) => {
-    const [startTime, endTime, name, melody] = music.split(",");
+    const [startTime, endTime, name, melody] = music.split(',');
     const duration = calculateDuration(startTime, endTime);
 
     const melodyLength = getMelodyLength(melody);

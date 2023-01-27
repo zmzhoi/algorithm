@@ -32,7 +32,7 @@ function solution(genres, plays) {
   }
 
   let answer = [];
-  rankList.forEach(({ genre }, index) => {
+  rankList.forEach(({ genre }) => {
     listMap[genre].some(({ index }, i) => {
       if (i === 2) return true;
       answer.push(index);

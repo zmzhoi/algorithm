@@ -9,9 +9,7 @@ function solution(clothes) {
     }
   });
 
-  return (
-    Object.keys(map).reduce((acc, key) => acc * (map[key].length + 1), 1) - 1
-  );
+  return Object.keys(map).reduce((acc, key) => acc * (map[key].length + 1), 1) - 1;
 }
 
 /*

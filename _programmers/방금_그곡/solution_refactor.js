@@ -5,7 +5,7 @@ function calculateDuration(s, e) {
 }
 
 function getMelodyLength(melody) {
-  return melody.length - (melody.split("#").length - 1);
+  return melody.length - (melody.split('#').length - 1);
 }
 
 function isSameSong(playedMelody, melody) {
@@ -18,7 +18,7 @@ function isSameSong(playedMelody, melody) {
       return false;
     } else {
       fromIndex = index + melody.length;
-      if (playedMelody[fromIndex] !== "#") {
+      if (playedMelody[fromIndex] !== '#') {
         return true;
       }
     }
@@ -31,12 +31,12 @@ function getPlayedMelody(melody, duration) {
   const tailCount = duration % melodyLength;
 
   const repeated = melody.repeat(repeatCount);
-  let tail = "";
+  let tail = '';
   for (let i = 0; i < melody.length; i++) {
     tail += melody[i];
 
     if (getMelodyLength(tail) === tailCount) {
-      if (i + 1 < melody.length && melody[i + 1] !== "#") {
+      if (i + 1 < melody.length && melody[i + 1] !== '#') {
         break;
       }
       continue;
@@ -47,11 +47,11 @@ function getPlayedMelody(melody, duration) {
 }
 
 function solution(m, musicinfos) {
-  let answer = "(None)";
+  let answer = '(None)';
   let currentAnswerDuration = -1;
 
   musicinfos.forEach((music) => {
-    const [startTime, endTime, name, melody] = music.split(",");
+    const [startTime, endTime, name, melody] = music.split(',');
     const duration = calculateDuration(startTime, endTime);
     const playedMelody = getPlayedMelody(melody, duration);
 
