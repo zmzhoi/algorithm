@@ -34,7 +34,6 @@ try {
   fs.writeFileSync(solution.path, solution.data, 'utf-8');
   fs.writeFileSync(link.path, link.data, 'utf-8');
   console.log(chalk.green('Success!'));
-  return;
 } catch (error) {
   console.log(chalk.red('Failure!'));
   console.log('');
