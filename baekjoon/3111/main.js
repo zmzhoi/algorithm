@@ -1,5 +1,5 @@
 function reverse(str) {
-  let reversed = "";
+  let reversed = '';
 
   for (let i = 0; i < str.length; i++) {
     reversed = str[i] + reversed;
@@ -25,14 +25,13 @@ function main(A, T) {
 
     found = index > -1;
     if (found) {
-      text =
-        text.slice(0, index) + text.slice(index + WORD.length, text.length);
+      text = text.slice(0, index) + text.slice(index + WORD.length, text.length);
     }
 
     odd = !odd;
   } while (found);
 
-  console.log("RESULT: ", text);
+  console.log('RESULT: ', text);
 }
 
-main("banana", "babananananadeda");
+main('banana', 'babananananadeda');

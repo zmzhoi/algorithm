@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "author": "최종명 <zmzhoi@gmail.com>",
   "scripts": {
-    "start:baekjoon": "nodemon baekjoon/$TARGET/main.js",
-    "create": "node scripts/create.js"
+    "create": "node scripts/create.js",
+    "format": "prettier --check \"**/*.(ts|tsx|cts|mts|js|jsx|cjs|mjs|json|md)\"",
+    "format:fix": "prettier --write \"**/*.(ts|tsx|cts|mts|js|jsx|cjs|mjs|json|md)\""
   },
   "dependencies": {
     "chalk": "^4.1.2",
