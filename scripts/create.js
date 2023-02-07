@@ -1,6 +1,6 @@
-const chalk = require("chalk");
-const fs = require("fs");
-const mkdirp = require("mkdirp");
+const chalk = require('chalk');
+const fs = require('fs');
+const mkdirp = require('mkdirp');
 
 // 파라미터 검증
 if (!validateArgv()) {
@@ -9,7 +9,7 @@ if (!validateArgv()) {
 
 // 파라미터 추출
 const argv = process.argv;
-const platform = argv[2] === "p" ? "_programmers" : "_baekjoon";
+const platform = argv[2] === 'p' ? 'programmers' : 'baekjoon';
 const name = argv[3];
 const path = `${platform}/${name}`;
 
@@ -22,40 +22,37 @@ if (fs.existsSync(path)) {
 // 해당 디렉토리 및 파일 생성
 const solution = {
   path: `${path}/solution.js`,
-  data: "function solution() {\n\n}",
+  data: 'function solution() {\n\n}',
 };
 const link = {
   path: `${path}/LINK.MD`,
-  data: "",
+  data: '',
 };
 
 try {
   mkdirp.sync(path);
-  fs.writeFileSync(solution.path, solution.data, "utf-8");
-  fs.writeFileSync(link.path, link.data, "utf-8");
-  console.log(chalk.green("Success!"));
+  fs.writeFileSync(solution.path, solution.data, 'utf-8');
+  fs.writeFileSync(link.path, link.data, 'utf-8');
+  console.log(chalk.green('Success!'));
   return;
 } catch (error) {
-  console.log(chalk.red("Failure!"));
-  console.log("");
+  console.log(chalk.red('Failure!'));
+  console.log('');
   console.log(chalk.yellow(error));
   process.exit(1);
 }
 
 function validateArgv() {
-  if (!["b", "p"].includes(process.argv[2]) || !process.argv[3]) {
-    console.log(chalk.yellow("You should set platform and name."));
+  if (!['b', 'p'].includes(process.argv[2]) || !process.argv[3]) {
+    console.log(chalk.yellow('You should set platform and name.'));
     console.log(
-      "in case of baekjoon : " +
-        chalk.yellow("npm run create") +
-        " " +
-        chalk.red("b 3111")
+      'in case of baekjoon : ' + chalk.yellow('npm run create') + ' ' + chalk.red('b 3111'),
     );
     console.log(
-      "in case of programmers : " +
-        chalk.yellow("npm run create") +
-        " " +
-        chalk.red("p 해시_완주하지 못한 선수")
+      'in case of programmers : ' +
+        chalk.yellow('npm run create') +
+        ' ' +
+        chalk.red('p 해시_완주하지 못한 선수'),
     );
     return false;
   }
