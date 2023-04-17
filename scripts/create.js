@@ -9,7 +9,7 @@ if (!validateArgv()) {
 
 // 파라미터 추출
 const argv = process.argv;
-const platform = argv[2] === 'p' ? 'programmers' : 'baekjoon';
+const platform = argv[2] === 'p' ? 'programmers' : argv[2] === 'b' ? 'baekjoon' : 'leetcode';
 const name = argv[3];
 const path = `${platform}/${name}`;
 
@@ -42,7 +42,7 @@ try {
 }
 
 function validateArgv() {
-  if (!['b', 'p'].includes(process.argv[2]) || !process.argv[3]) {
+  if (!['b', 'p', 'l'].includes(process.argv[2]) || !process.argv[3]) {
     console.log(chalk.yellow('You should set platform and name.'));
     console.log(
       'in case of baekjoon : ' + chalk.yellow('npm run create') + ' ' + chalk.red('b 3111'),
@@ -52,6 +52,12 @@ function validateArgv() {
         chalk.yellow('npm run create') +
         ' ' +
         chalk.red('p 해시_완주하지 못한 선수'),
+    );
+    console.log(
+      'in case of leetcode : ' +
+        chalk.yellow('npm run create') +
+        ' ' +
+        chalk.red('l 해시_완주하지 못한 선수'),
     );
     return false;
   }
